@@ -1,0 +1,37 @@
+{
+  "name": "jest-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "server": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "module_name": "^1.0.0",
+    "mongoose": "^6.12.0",
+    "pm2": "^5.3.0",
+    "socket.io": "^4.6.0",
+    "stripe": "^11.11.0",
+    "uuid": "^9.0.0",
+    "webrtc-adapter": "^8.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ws": "3.3.2"
+  }
+}
