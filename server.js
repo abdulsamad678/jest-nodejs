@@ -15,10 +15,12 @@ connectdb()
 app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.json());
 app.use(express.json())
-app.use('/api/user/data', require('./routes/userRoutes'))
+app.use('/api/user/data/', require('./routes/userRoutes'))
 
 
 const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`server started at :${port}`);
 });
+
+module.exports= app

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest app.test.js",
     "start": "nodemon server",
     "server": "nodemon server"
   },
@@ -31,7 +32,9 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "nodemon": "^3.0.1",
+    "supertest": "^6.3.3",
     "ws": "3.3.2"
   }
 }

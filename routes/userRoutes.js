@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
     try {
       let username = await User.find({});
   
-      if (!username) {
+      if (username.length === 0) {
         res.status(400).send({ message: "user not found" });
         return;
       } else {
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
         });
       }
     } catch (err) {
-      res.status(500).json({ data: { success: false, message: err.message } });
+      res.status(500).send({ data: { success: false, message: err.message } });
     }
   });
 
