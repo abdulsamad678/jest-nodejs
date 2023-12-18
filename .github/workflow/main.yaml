@@ -1,6 +1,10 @@
 name: Node.js github actions 
 
-on: push
+on:
+  push:
+    branches: [ main ] # Set the branch where you want to trigger the workflow
+  pull_request:
+    branches: [ main ]
   
 jobs:
   build:
