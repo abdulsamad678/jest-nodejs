@@ -23,7 +23,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ngduc/vercel-deploy-action@main
+      - uses: ngduc/vercel-deploy-action@master
         with:
           vercel-cli: vercel
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
