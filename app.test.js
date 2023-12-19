@@ -44,7 +44,7 @@ describe("GET /api/user/data/", () => {
     expect(responseData.data.success).toBe(true);
 
     expect(responseData.data.allusers[0]).toEqual(mockUsers[0]); // Compare with the first element of mockUsers array
-  }, 10000);
+  });
 
   it("responds with user not found message when no users exist", async () => {
     jest.spyOn(User, "find").mockResolvedValue([]);
@@ -54,7 +54,7 @@ describe("GET /api/user/data/", () => {
     expect(response1.status).toBe(400); 
     const responseBody = JSON.parse(response1.text);
     expect(responseBody.message).toBe("user not found");
-  }, 10000);
+  });
 
   it("responds with a server error message when an error occurs", async () => {
    // let errorMessage = "Database error";
@@ -66,7 +66,7 @@ describe("GET /api/user/data/", () => {
     const responseBody = JSON.parse(response2.text); 
    // expect(responseBody.data.message).toEqual(errorMessage); 
     expect(responseBody.data.message).toBeDefined()
-  }, 10000);
+  });
 
   afterEach(() => {
     jest.restoreAllMocks();
