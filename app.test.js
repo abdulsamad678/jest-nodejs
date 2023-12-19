@@ -35,7 +35,6 @@ describe("GET /api/user/data/", () => {
     jest.spyOn(User, "find").mockResolvedValue(mockUsers);
 
     const response = await supertest(app).get("/api/user/data/");
-    console.log("res" + JSON.stringify(response));
     expect(response.status).toBe(200);
 
     const responseData = JSON.parse(response.text);
@@ -51,7 +50,6 @@ describe("GET /api/user/data/", () => {
     jest.spyOn(User, "find").mockResolvedValue([]);
 
     const response1 = await supertest(app).get("/api/user/data/");
-    console.log("response1" + JSON.stringify(response1));
 
     expect(response1.status).toBe(400); 
     const responseBody = JSON.parse(response1.text);
@@ -63,7 +61,6 @@ describe("GET /api/user/data/", () => {
     jest.spyOn(User, "find").mockRejectedValue(new Error());
     //jest.spyOn(User, "find").mockRejectedValue(new Error(errorMessage));
     const response2 = await supertest(app).get("/api/user/data/");
-    console.log("response2" + JSON.stringify(response2));
     //console.log("errorMessage:", errorMessage);
     expect(response2.status).toBe(500);
     const responseBody = JSON.parse(response2.text); 
