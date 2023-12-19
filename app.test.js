@@ -2,11 +2,16 @@ const express = require("express");
 const supertest = require("supertest");
 const router = express.Router();
 const mongoose = require("mongoose");
-const app = require("./server"); 
+const { app, server } = require("./server"); 
 const User = require("./model/user"); 
 const request = supertest(router); 
 
 describe("GET /api/user/data/", () => {
+  afterAll(async () => {
+    // Close the MongoDB connection
+    await mongoose.connection.close();
+    await server.close();
+  })
   it("responds with all users when users exist", async () => {
     // Mocking the User.find method to return a mock user
     const mockUsers = [

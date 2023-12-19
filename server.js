@@ -19,8 +19,8 @@ app.use('/api/user/data/', require('./routes/userRoutes'))
 
 
 const port = process.env.PORT;
-app.listen(port, () => {
+const server =app.listen(port, () => {
   console.log(`server started at :${port}`);
 });
 
-module.exports= app
+module.exports= {app,server}
