@@ -40,6 +40,7 @@ describe("GET /api/user/data/", () => {
     jest.spyOn(User, "find").mockResolvedValue(mockUsers);
 
     const response = await supertest(app).get("/api/user/data/");
+    console.log("abi")
     expect(response.status).toBe(200);
 
     const responseData = JSON.parse(response.text);
